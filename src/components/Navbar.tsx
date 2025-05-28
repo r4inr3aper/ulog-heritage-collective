@@ -13,8 +13,6 @@ const Navbar = () => {
     { name: 'Shop', path: '/shop' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Impact', path: '/impact' },
-    { name: 'Women Empowerment', path: '/women-empowerment' },
     { name: 'Media', path: '/media' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -31,7 +29,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer" onClick={() => handleNavClick('/')}>
             <h1 className="text-2xl font-bold text-gradient">Ulog</h1>
-            <p className="text-xs text-assam-earth">A Promise for Affinity</p>
+            <p className="text-xs text-gray-600">A Promise for Affinity</p>
           </div>
 
           {/* Desktop Navigation */}
@@ -43,8 +41,8 @@ const Navbar = () => {
                   onClick={() => handleNavClick(item.path)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     location.pathname === item.path
-                      ? 'bg-assam-gold text-white'
-                      : 'text-gray-700 hover:bg-assam-cream hover:text-assam-earth'
+                      ? 'bg-assam-green text-white'
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-assam-green'
                   }`}
                 >
                   {item.name}
@@ -57,7 +55,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-assam-earth hover:bg-assam-cream focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-assam-green hover:bg-gray-100 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -84,8 +82,8 @@ const Navbar = () => {
                 onClick={() => handleNavClick(item.path)}
                 className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                   location.pathname === item.path
-                    ? 'bg-assam-gold text-white'
-                    : 'text-gray-700 hover:bg-assam-cream hover:text-assam-earth'
+                    ? 'bg-assam-green text-white'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-assam-green'
                 }`}
               >
                 {item.name}

@@ -63,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated green and white theme
+				// Green and white theme
 				assam: {
 					green: '#059669',
 					'green-dark': '#047857',
