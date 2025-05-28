@@ -12,23 +12,23 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-assam-earth mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Ulog – A Promise for <span className="text-gradient">Affinity</span>
             </h1>
-            <p className="text-xl text-assam-earth/80 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Reviving roots through taste, touch, and tales. Experience the authentic essence of Assam through rare ethnic foods, timeless handloom artistry, and celebrated literature.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={() => navigate('/shop')}
-                className="bg-assam-red hover:bg-assam-red/90 text-white px-8 py-3 text-lg"
+                className="bg-assam-green hover:bg-assam-green-dark text-white px-8 py-3 text-lg"
               >
                 Shop Now
               </Button>
               <Button 
                 onClick={() => navigate('/about')}
                 variant="outline" 
-                className="border-assam-earth text-assam-earth hover:bg-assam-earth hover:text-white px-8 py-3 text-lg"
+                className="border-assam-green text-assam-green hover:bg-assam-green hover:text-white px-8 py-3 text-lg"
               >
                 Our Story
               </Button>
@@ -43,7 +43,7 @@ const Hero = () => {
                 alt="Assam Heritage" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-assam-earth/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>

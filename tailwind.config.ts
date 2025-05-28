@@ -63,14 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom Assamese theme colors
+				// Updated green and white theme
 				assam: {
-					red: '#DC2626',
-					gold: '#F59E0B',
-					earth: '#92400E',
 					green: '#059669',
-					cream: '#FEF7ED',
-					silk: '#FEF3C7'
+					'green-dark': '#047857',
+					'green-light': '#10B981',
+					white: '#FFFFFF',
+					cream: '#F9FAFB',
+					gray: '#6B7280'
 				}
 			},
 			borderRadius: {

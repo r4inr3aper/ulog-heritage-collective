@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,6 +6,15 @@ import { Button } from '@/components/ui/button';
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  // WhatsApp number for orders
+  const whatsappNumber = "+918472123456"; // Replace with actual WhatsApp number
+
+  const handleBuyNow = (productName: string, price: string) => {
+    const message = `Hi! I'm interested in purchasing: ${productName} (${price}). Please provide more details.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -89,8 +97,8 @@ const Shop = () => {
       {/* Header */}
       <section className="bg-assam-cream py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-assam-earth mb-4">Our Shop</h1>
-          <p className="text-lg text-assam-earth/80">Discover authentic Assamese heritage through our curated collection</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Shop</h1>
+          <p className="text-lg text-assam-gray">Discover authentic Assamese heritage through our curated collection</p>
         </div>
       </section>
 
@@ -104,8 +112,8 @@ const Shop = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 className={selectedCategory === category.id 
-                  ? "bg-assam-red hover:bg-assam-red/90" 
-                  : "border-assam-earth text-assam-earth hover:bg-assam-earth hover:text-white"
+                  ? "bg-assam-green hover:bg-assam-green-dark" 
+                  : "border-assam-green text-assam-green hover:bg-assam-green hover:text-white"
                 }
               >
                 {category.name}
@@ -127,17 +135,20 @@ const Shop = () => {
                     alt={product.name}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4 bg-assam-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-assam-green text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {product.price}
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-assam-earth mb-2">{product.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
                   <p className="text-gray-600 italic mb-3">{product.description}</p>
                   <p className="text-sm text-gray-700 mb-3">{product.story}</p>
-                  <p className="text-sm text-assam-red font-medium mb-4">{product.artisan}</p>
-                  <Button className="w-full bg-assam-red hover:bg-assam-red/90 text-white">
-                    Add to Cart
+                  <p className="text-sm text-assam-green font-medium mb-4">{product.artisan}</p>
+                  <Button 
+                    onClick={() => handleBuyNow(product.name, product.price)}
+                    className="w-full bg-assam-green hover:bg-assam-green-dark text-white"
+                  >
+                    Buy Now
                   </Button>
                 </CardContent>
               </Card>

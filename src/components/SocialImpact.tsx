@@ -14,8 +14,8 @@ const SocialImpact = () => {
     <section className="py-20 bg-assam-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-assam-earth mb-6">The Social Impact</h2>
-          <p className="text-xl text-assam-earth/80 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">The Social Impact</h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             "Empowering over 1000+ women artisans across 50+ villages. Every product is a promise to preserve tradition and uplift lives."
           </p>
         </div>
@@ -24,8 +24,8 @@ const SocialImpact = () => {
           {stats.map((stat, index) => (
             <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6 text-center">
-                <div className="text-3xl md:text-4xl font-bold text-assam-red mb-2">{stat.number}</div>
-                <div className="text-sm md:text-base text-assam-earth font-medium">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-assam-green mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-900 font-medium">{stat.label}</div>
               </CardContent>
             </Card>
           ))}
@@ -40,7 +40,7 @@ const SocialImpact = () => {
             />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-assam-earth mb-6">Preserving Traditions, Empowering Communities</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Preserving Traditions, Empowering Communities</h3>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Each purchase directly supports rural women artisans, providing them with sustainable livelihoods while preserving ancient crafts and culinary traditions.
             </p>
