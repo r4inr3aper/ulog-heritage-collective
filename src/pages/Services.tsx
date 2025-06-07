@@ -220,7 +220,7 @@ const Services = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-assam-green font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-assam-green hover:bg-white hover:text-assam-green font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Learn More About Our Impact
             </Button>

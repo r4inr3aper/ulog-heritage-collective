@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="animate-slide-up">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="https://static.wixstatic.com/media/e58556_258afa9e674440c19385f0c599d20146~mv2.jpg/v1/fill/w_1000,h_670,al_c,q_90,usm_0.66_1.00_0.01/e58556_258afa9e674440c19385f0c599d20146~mv2.jpg" 
                 alt="Assam Heritage" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

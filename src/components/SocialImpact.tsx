@@ -34,7 +34,7 @@ const SocialImpact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+              src="https://thedailyguardian.com/wp-content/uploads/2023/01/Destination-Bishwanath-Ghat-Weaving-Assam-India.jpg" 
               alt="Women Artisans" 
               className="rounded-2xl shadow-lg w-full h-80 object-cover"
             />

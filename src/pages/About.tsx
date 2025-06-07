@@ -82,7 +82,7 @@ const About = () => {
             <div className="animate-slide-up">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  src="https://www.caleidoscope.in/wp-content/uploads/2021/05/Folk-Dances-of-Assam-Bihu-2.jpg" 
                   alt="Assam Heritage" 
                   className="rounded-3xl shadow-2xl w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
@@ -238,7 +238,7 @@ const About = () => {
                   <span className="text-white font-bold text-xl">U</span>
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-gray-900">Laskshadeep Adhikary</p>
+                  <p className="font-semibold text-gray-900">Lakshadeep Adhikary</p>
                   <p className="text-gray-600">Ulog Heritage Collective</p>
                 </div>
               </div>
