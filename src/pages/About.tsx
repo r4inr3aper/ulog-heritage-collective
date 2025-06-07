@@ -238,7 +238,7 @@ const About = () => {
                   <span className="text-white font-bold text-xl">U</span>
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-gray-900">Founder</p>
+                  <p className="font-semibold text-gray-900">Laskshadeep Adhikary</p>
                   <p className="text-gray-600">Ulog Heritage Collective</p>
                 </div>
               </div>
