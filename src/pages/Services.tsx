@@ -3,90 +3,166 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, CheckCircle, Users, Target, Award, Heart } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       title: 'Artisan Partnership',
-      description: 'Comprehensive support for rural artisans including handloom training, fair wage employment, and rural outreach programs.',
+      description: 'Comprehensive support for rural artisans including handloom training, fair wage employment, and rural outreach programs that transform lives.',
       features: [
-        'Skill development workshops',
-        'Fair trade practices',
-        'Quality certification',
-        'Marketing support'
+        'Skill development workshops and certification',
+        'Fair trade practices ensuring livable wages',
+        'Quality certification and product standardization',
+        'Global marketing support and brand building'
       ],
-      icon: '🤝'
+      icon: '🤝',
+      color: 'from-assam-green to-assam-green-light'
     },
     {
       title: 'Sustainable Food Chain',
-      description: 'Building a robust network for sourcing and promoting indigenous food ingredients while supporting local farmers.',
+      description: 'Building a robust network for sourcing and promoting indigenous food ingredients while supporting local farmers and preserving culinary heritage.',
       features: [
-        'Direct farmer partnerships',
-        'Organic certification support',
-        'Traditional recipe preservation',
-        'Supply chain optimization'
+        'Direct farmer partnerships and fair pricing',
+        'Organic certification support and guidance',
+        'Traditional recipe preservation initiatives',
+        'Supply chain optimization and logistics'
       ],
-      icon: '🌾'
+      icon: '🌾',
+      color: 'from-green-600 to-green-400'
     },
     {
       title: 'Literature Promotion',
-      description: 'Partnering with local writers, translators, and libraries to keep Assamese literature alive and accessible.',
+      description: 'Partnering with local writers, translators, and libraries to keep Assamese literature alive, accessible, and celebrated worldwide.',
       features: [
-        'Translation services',
-        'Publication support',
-        'Author workshops',
-        'Literary event organization'
+        'Professional translation services',
+        'Publication support and distribution',
+        'Author workshops and mentorship programs',
+        'Literary event organization and promotion'
       ],
-      icon: '📚'
+      icon: '📚',
+      color: 'from-emerald-600 to-emerald-400'
     },
     {
       title: 'Cultural Workshops',
-      description: 'Interactive culinary, weaving, and storytelling events conducted both online and offline to spread awareness.',
+      description: 'Interactive culinary, weaving, and storytelling events conducted both online and offline to spread cultural awareness and preserve traditions.',
       features: [
-        'Cooking masterclasses',
-        'Weaving demonstrations',
-        'Storytelling sessions',
-        'Cultural immersion programs'
+        'Hands-on cooking masterclasses',
+        'Live weaving demonstrations',
+        'Traditional storytelling sessions',
+        'Immersive cultural experience programs'
       ],
-      icon: '🎨'
+      icon: '🎨',
+      color: 'from-teal-600 to-teal-400'
+    }
+  ];
+
+  const stats = [
+    { icon: Users, number: '1000+', label: 'Artisans Supported' },
+    { icon: Target, number: '50+', label: 'Villages Reached' },
+    { icon: Award, number: '20+', label: 'Craft Clusters' },
+    { icon: Heart, number: '5000+', label: 'Lives Impacted' }
+  ];
+
+  const processSteps = [
+    { 
+      step: '01', 
+      title: 'Identify & Connect', 
+      description: 'We identify talented artisans and authentic products in rural communities through grassroots outreach' 
+    },
+    { 
+      step: '02', 
+      title: 'Build Partnerships', 
+      description: 'We establish fair, long-term partnerships that benefit both artisans and customers sustainably' 
+    },
+    { 
+      step: '03', 
+      title: 'Train & Develop', 
+      description: 'We provide comprehensive training and resources to enhance skills, quality, and market readiness' 
+    },
+    { 
+      step: '04', 
+      title: 'Market & Scale', 
+      description: 'We market products globally while sharing authentic stories and ensuring fair compensation' 
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Header */}
-      <section className="bg-assam-cream py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-assam-earth mb-4">Our Services</h1>
-          <p className="text-lg text-assam-earth/80 max-w-3xl mx-auto">
-            Comprehensive programs designed to preserve heritage, empower communities, and create sustainable impact
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-assam-green to-assam-green-light text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Our Services
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+            Comprehensive programs designed to preserve heritage, empower communities, and create sustainable impact across Assam
           </p>
+          <div className="mt-8 flex justify-center">
+            <Button 
+              size="lg" 
+              className="bg-white text-assam-green hover:bg-gray-100 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            >
+              Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-assam-green text-white rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-assam-green mb-2">{stat.number}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our integrated approach combines traditional craftsmanship with modern business practices
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden">
+                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="text-4xl mr-4">{service.icon}</div>
-                    <h3 className="text-2xl font-bold text-assam-earth group-hover:text-assam-red transition-colors">
-                      {service.title}
-                    </h3>
+                    <div className="text-5xl mr-6 group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-assam-green transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                     {service.description}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-600">
-                        <div className="w-2 h-2 bg-assam-gold rounded-full mr-3"></div>
-                        {feature}
+                      <li key={featureIndex} className="flex items-start text-gray-600">
+                        <CheckCircle className="h-5 w-5 text-assam-green mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -98,26 +174,28 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-assam-earth mb-4">How We Work</h2>
-            <p className="text-lg text-gray-600">Our systematic approach to creating lasting impact</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">How We Create Impact</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our systematic approach ensures sustainable growth and meaningful change
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { step: '01', title: 'Identify', description: 'We identify talented artisans and authentic products in rural communities' },
-              { step: '02', title: 'Partner', description: 'We establish fair partnerships that benefit both artisans and customers' },
-              { step: '03', title: 'Train', description: 'We provide training and resources to enhance skills and quality' },
-              { step: '04', title: 'Market', description: 'We market products globally while sharing the stories behind them' }
-            ].map((process, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-assam-red text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold group-hover:bg-assam-gold transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((process, index) => (
+              <div key={index} className="text-center group relative">
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-assam-green/20 transform translate-x-4"></div>
+                )}
+                <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-assam-green to-assam-green-light text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold group-hover:scale-110 transition-all duration-300 shadow-lg">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-bold text-assam-earth mb-3">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-assam-green transition-colors duration-300">
+                  {process.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{process.description}</p>
               </div>
             ))}
           </div>
@@ -125,19 +203,27 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-assam-earth text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Partner With Us?</h2>
-          <p className="text-xl mb-8 text-gray-300">
-            Join our mission to preserve Assamese heritage while creating sustainable livelihoods for rural communities.
+      <section className="py-20 bg-gradient-to-r from-assam-green to-assam-green-light text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
+          <p className="text-xl mb-10 text-white/90 leading-relaxed">
+            Join our mission to preserve Assamese heritage while creating sustainable livelihoods for rural communities. Together, we can make tradition profitable and culture sustainable.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-assam-gold hover:bg-assam-gold/90 text-assam-earth px-8 py-3 rounded-lg font-semibold transition-colors">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-white text-assam-green hover:bg-gray-100 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+            >
               Become an Artisan Partner
-            </button>
-            <button className="border border-assam-gold text-assam-gold hover:bg-assam-gold hover:text-assam-earth px-8 py-3 rounded-lg font-semibold transition-colors">
-              Learn More
-            </button>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-assam-green font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+            >
+              Learn More About Our Impact
+            </Button>
           </div>
         </div>
       </section>
