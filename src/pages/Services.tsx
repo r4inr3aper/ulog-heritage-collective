@@ -28,8 +28,8 @@ const Services = () => {
       description: 'Building a robust network for sourcing and promoting indigenous food ingredients while supporting local farmers and preserving culinary heritage.',
       features: [
         'Direct farmer partnerships and fair pricing',
-        'Organic certification support and guidance',
-        'Traditional recipe preservation initiatives',
+        'Essential certification, support and guidance',
+        'Food license assistance and compliance',
         'Supply chain optimization and logistics'
       ],
       icon: '🌾',
