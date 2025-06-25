@@ -1,17 +1,65 @@
-
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Users, BookOpen, Star, Award, Target } from 'lucide-react';
 
 const About = () => {
+  const [counts, setCounts] = useState([0, 0, 0, 0]);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
+
   const impactStats = [
-    { number: '50+', label: 'Villages Impacted', icon: Target },
-    { number: '1000+', label: 'Women Employed', icon: Users },
-    { number: '5000+', label: 'Books Distributed', icon: BookOpen },
-    { number: '20+', label: 'Craft Clusters Supported', icon: Award }
+    { number: 50, label: 'Villages Touched', icon: Target },
+    { number: 1000, label: 'Women Employed', icon: Users },
+    { number: 5000, label: 'Books Brought to Life', icon: BookOpen },
+    { number: 20, label: 'Craft Clusters Supported', icon: Award }
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounts();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCounts = () => {
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const stepDuration = duration / steps;
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+
+      const newCounts = impactStats.map((stat) => {
+        const target = stat.number;
+        const current = Math.floor(target * progress);
+        return current;
+      });
+
+      setCounts(newCounts);
+
+      if (currentStep >= steps) {
+        clearInterval(interval);
+        setCounts(impactStats.map(stat => stat.number));
+      }
+    }, stepDuration);
+  };
 
   const successStories = [
     {
@@ -34,6 +82,13 @@ const About = () => {
       description: 'Transformed her kitchen knowledge into a thriving organic food business.',
       image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
       impact: 'Supplies 100+ families'
+    },
+    {
+      name: 'Rekha Devi',
+      achievement: 'Organic Gardening Expert',
+      description: 'Leads sustainable farming initiatives and teaches traditional cultivation methods.',
+      image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      impact: 'Guides 75+ farmers'
     }
   ];
 
@@ -52,6 +107,11 @@ const About = () => {
       icon: Star,
       title: 'Quality Excellence',
       description: 'Maintaining the highest standards in every product we offer.'
+    },
+    {
+      icon: Target,
+      title: 'Organic Gardening',
+      description: 'Promoting sustainable farming practices and traditional cultivation methods.'
     }
   ];
 
@@ -101,6 +161,9 @@ const About = () => {
                   Every product in our collection tells a story of heritage, skill, and hope. Through Ulog, we're not just preserving 
                   traditions; we're building bridges between rural artisans and global communities.
                 </p>
+                <p className="text-lg text-assam-green font-semibold italic">
+                  "From Rural Roots to Your Home"
+                </p>
               </div>
               <div className="mt-8 flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
@@ -127,15 +190,15 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-assam-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-assam-green/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <value.icon className="h-8 w-8 text-assam-green" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-assam-green transition-colors duration-300">{value.title}</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -144,7 +207,7 @@ const About = () => {
       </section>
 
       {/* Impact Statistics */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" ref={sectionRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Impact</h2>
@@ -153,13 +216,15 @@ const About = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
             {impactStats.map((stat, index) => (
-              <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-white to-assam-cream/20">
-                <CardContent className="p-8">
+              <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-assam-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="h-6 w-6 text-assam-green" />
                   </div>
-                  <div className="text-4xl font-bold text-assam-green mb-2">{stat.number}</div>
-                  <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-assam-green mb-2">
+                    {counts[index]}+
+                  </div>
+                  <div className="text-sm md:text-base text-gray-900 font-medium">{stat.label}</div>
                 </CardContent>
               </Card>
             ))}
@@ -184,26 +249,29 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {successStories.map((story, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-2 group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={story.image} 
-                    alt={story.name}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-assam-green text-white px-3 py-1 rounded-full text-sm font-medium inline-block">
+              <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <img 
+                      src={story.image} 
+                      alt={story.name}
+                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4 bg-assam-green text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                       {story.impact}
                     </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{story.name}</h3>
-                  <p className="text-assam-green font-semibold mb-3">{story.achievement}</p>
-                  <p className="text-gray-700 text-sm leading-relaxed">{story.description}</p>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-assam-earth mb-2">{story.name}</h3>
+                    <p className="text-gray-600 italic text-sm mb-2">
+                      {story.achievement}
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-xs">
+                      {story.description}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}

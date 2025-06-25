@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,6 +6,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Users, Target, Award, Heart } from 'lucide-react';
 
 const Services = () => {
+  const [counts, setCounts] = useState([0, 0, 0, 0]);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
+
   const services = [
     {
       title: 'Artisan Partnership',
@@ -59,17 +62,62 @@ const Services = () => {
   ];
 
   const stats = [
-    { icon: Users, number: '1000+', label: 'Artisans Supported' },
-    { icon: Target, number: '50+', label: 'Villages Reached' },
-    { icon: Award, number: '20+', label: 'Craft Clusters' },
-    { icon: Heart, number: '5000+', label: 'Lives Impacted' }
+    { icon: Users, number: 1000, label: 'Artisans Supported' },
+    { icon: Target, number: 50, label: 'Villages Reached' },
+    { icon: Award, number: 20, label: 'Craft Clusters' },
+    { icon: Heart, number: 5000, label: 'Lives Impacted' }
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounts();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCounts = () => {
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const stepDuration = duration / steps;
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+
+      const newCounts = stats.map((stat) => {
+        const target = stat.number;
+        const current = Math.floor(target * progress);
+        return current;
+      });
+
+      setCounts(newCounts);
+
+      if (currentStep >= steps) {
+        clearInterval(interval);
+        setCounts(stats.map(stat => stat.number));
+      }
+    }, stepDuration);
+  };
 
   const processSteps = [
     { 
       step: '01', 
       title: 'Identify & Connect', 
-      description: 'We identify talented artisans and authentic products in rural communities through grassroots outreach' 
+      description: 'We discover talented artisans and authentic products through grassroots community outreach and partnerships.' 
     },
     { 
       step: '02', 
@@ -114,7 +162,7 @@ const Services = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" ref={sectionRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -122,7 +170,9 @@ const Services = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-assam-green text-white rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="h-8 w-8" />
                 </div>
-                <div className="text-3xl font-bold text-assam-green mb-2">{stat.number}</div>
+                <div className="text-3xl font-bold text-assam-green mb-2">
+                  {counts[index]}+
+                </div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -185,18 +235,18 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((process, index) => (
-              <div key={index} className="text-center group relative">
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-assam-green/20 transform translate-x-4"></div>
-                )}
-                <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-assam-green to-assam-green-light text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold group-hover:scale-110 transition-all duration-300 shadow-lg">
-                  {process.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-assam-green transition-colors duration-300">
-                  {process.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{process.description}</p>
-              </div>
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg group overflow-hidden">
+                <div className="h-2 bg-gradient-to-r from-assam-green to-assam-green-light"></div>
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-assam-green/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-xl font-bold text-assam-green">{process.step}</div>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-assam-green transition-colors duration-300">
+                    {process.title}
+                  </h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">{process.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

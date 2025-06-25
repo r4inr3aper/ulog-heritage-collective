@@ -20,7 +20,8 @@ const Shop = () => {
     { id: 'all', name: 'All Products' },
     { id: 'food', name: 'Ethnic Foods' },
     { id: 'handloom', name: 'Handloom' },
-    { id: 'books', name: 'Books' }
+    { id: 'books', name: 'Books' },
+    { id: 'gardening', name: 'Organic Gardening' }
   ];
 
   const products = [
@@ -83,6 +84,46 @@ const Shop = () => {
       description: 'Contemporary Assamese literature at its finest.',
       story: 'Explore modern Assam through the eyes of one of its greatest writers.',
       artisan: 'Complete collection with English translations'
+    },
+    {
+      id: 7,
+      name: 'Organic Assam Lemon Seeds',
+      price: '₹180',
+      category: 'gardening',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      description: 'Grow your own Assamese citrus heritage.',
+      story: 'Traditional lemon varieties that have been cultivated in Assam for generations.',
+      artisan: 'Sourced from Organic Farmers Collective, Dibrugarh'
+    },
+    {
+      id: 8,
+      name: 'Bamboo Garden Tools Set',
+      price: '₹1,200',
+      category: 'gardening',
+      image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      description: 'Eco-friendly gardening tools from sustainable bamboo.',
+      story: 'Handcrafted bamboo tools that connect you to traditional farming practices.',
+      artisan: 'Crafted by Bamboo Artisans, Majuli'
+    },
+    {
+      id: 9,
+      name: 'Assam Tea Plant Saplings',
+      price: '₹350',
+      category: 'gardening',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      description: 'Start your own tea garden with authentic Assam varieties.',
+      story: 'Grow the same tea varieties that made Assam famous worldwide.',
+      artisan: 'Nursery maintained by Tea Garden Workers Cooperative'
+    },
+    {
+      id: 10,
+      name: 'Organic Vermicompost',
+      price: '₹280',
+      category: 'gardening',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      description: 'Natural fertilizer for sustainable gardening.',
+      story: 'Produced using traditional composting methods with local earthworms.',
+      artisan: 'Produced by Women Farmers Group, Kamrup'
     }
   ];
 
@@ -95,7 +136,7 @@ const Shop = () => {
       <Navbar />
       
       {/* Header */}
-      <section className="bg-assam-cream py-16">
+      <section className="bg-assam-cream py-8 md:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Shop</h1>
           <p className="text-lg text-assam-gray">Discover authentic Assamese heritage through our curated collection</p>
@@ -128,7 +169,7 @@ const Shop = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg group overflow-hidden">
+              <Card key={product.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg group overflow-hidden flex flex-col h-full">
                 <div className="relative">
                   <img 
                     src={product.image} 
@@ -139,14 +180,13 @@ const Shop = () => {
                     {product.price}
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                  <p className="text-gray-600 italic mb-3">{product.description}</p>
-                  <p className="text-sm text-gray-700 mb-3">{product.story}</p>
-                  <p className="text-sm text-assam-green font-medium mb-4">{product.artisan}</p>
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{product.name}</h3>
+                  <p className="text-gray-600 italic mb-4 text-sm line-clamp-2">{product.description}</p>
+                  <p className="text-sm text-assam-green font-medium mb-6 mt-auto">{product.artisan}</p>
                   <Button 
                     onClick={() => handleBuyNow(product.name, product.price)}
-                    className="w-full bg-assam-green hover:bg-assam-green-dark text-white"
+                    className="w-full bg-assam-green hover:bg-assam-green-dark text-white mt-auto"
                   >
                     Buy Now
                   </Button>

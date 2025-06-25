@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +16,9 @@ const Hero = () => {
             </h1>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Reviving roots through taste, touch, and tales. Experience the authentic essence of Assam through rare ethnic foods, timeless handloom artistry, and celebrated literature.
+            </p>
+            <p className="text-lg text-assam-green font-semibold mb-8 italic">
+              "From Rural Roots to Your Home"
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
