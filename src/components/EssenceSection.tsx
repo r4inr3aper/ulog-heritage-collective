@@ -43,7 +43,7 @@ const EssenceSection = () => {
             <CardContent className="p-0">
               <div className="relative">
                 <img 
-                  src="https://th.bing.com/th/id/R.ac94345137d5566cb6cbfb172b8ef97e?rik=EWpHSTsavFjQgg&riu=http%3a%2f%2f3.bp.blogspot.com%2f-uW3d65iS1ho%2fU8gIBb-1DoI%2fAAAAAAAAA7Y%2fUcIDfkFPbyg%2fs1600%2fassame-girls-dress.jpg&ehk=fG71xI%2fqUiaQ5twfyPT2iIS1OArqIJZDRjyFoieoFN4%3d&risl=&pid=ImgRaw&r=0" 
+                  src="https://media-cdn.tripadvisor.com/media/photo-s/1c/82/d9/a0/beautiful-assamese-handloom.jpg" 
                   alt="Handloom" 
                   className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

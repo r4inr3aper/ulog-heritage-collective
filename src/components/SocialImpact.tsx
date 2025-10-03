@@ -144,7 +144,7 @@ const SocialImpact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="https://thedailyguardian.com/wp-content/uploads/2023/01/Destination-Bishwanath-Ghat-Weaving-Assam-India.jpg" 
+              src="https://thecsruniverse.com/adminxsafe/uploads/Cairn%20Case%20Cover.jpg" 
               alt="Women Artisans" 
               className="rounded-2xl shadow-lg w-full h-80 object-cover"
             />
