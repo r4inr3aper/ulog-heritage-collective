@@ -30,11 +30,11 @@ const Navbar = () => {
           <div className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={() => handleNavClick('/')}>
             <img 
               src="/jiya.png" 
-              alt="জিঞা Logo" 
+              alt="জিঞাঁ Logo" 
               className="h-10 w-10 object-contain"
             />
             <div>
-              <h1 className="text-xl md:text-xl font-bold text-gradient">জিঞা</h1>
+              <h1 className="text-xl md:text-xl font-bold text-gradient">জিঞাঁ</h1>
               <p className="text-xs text-gray-600 hidden sm:block">Stay like a Local, Travel like a Friend</p>
             </div>
           </div>

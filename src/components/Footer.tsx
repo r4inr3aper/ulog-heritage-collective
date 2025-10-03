@@ -27,10 +27,10 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <img 
                 src="/jiya.png" 
-                alt="জিঞা Logo" 
+                alt="জিঞাঁ Logo" 
                 className="h-12 w-12 object-contain"
               />
-              <h3 className="text-2xl font-bold text-assam-green">জিঞা</h3>
+              <h3 className="text-2xl font-bold text-assam-green">জিঞাঁ</h3>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Stay like a Local, Travel like a Friend. Reviving Assam's rich heritage through authentic products while empowering rural communities.
@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © {new Date().getFullYear()} জিঞা. All rights reserved. Made with love for Assam's heritage.
+            © {new Date().getFullYear()} জিঞাঁ. All rights reserved. Made with love for Assam's heritage.
           </p>
         </div>
       </div>

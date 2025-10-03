@@ -12,7 +12,7 @@ const Hero = () => {
           {/* Text Content */}
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              জিঞা – Stay like a Local, Travel like a Friend
+              জিঞাঁ – Stay like a Local, Travel like a Friend
             </h1>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Reviving roots through taste, touch, and tales. Experience the authentic essence of Assam through rare ethnic foods, timeless handloom artistry, and celebrated literature.

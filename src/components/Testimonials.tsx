@@ -5,17 +5,17 @@ import { Card, CardContent } from '@/components/ui/card';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "The handloom saree I bought from জিঞা is not just beautiful, it carries the soul of Assam. Knowing it supports rural women makes it even more special.",
+      quote: "The handloom saree I bought from জিঞাঁ is not just beautiful, it carries the soul of Assam. Knowing it supports rural women makes it even more special.",
       author: "Priya Sharma",
       location: "Delhi"
     },
     {
-      quote: "জিঞা's ethnic foods brought back memories of my grandmother's cooking. The black rice is absolutely authentic and delicious.",
+      quote: "জিঞাঁ's ethnic foods brought back memories of my grandmother's cooking. The black rice is absolutely authentic and delicious.",
       author: "Rajesh Bora",
       location: "Guwahati"
     },
     {
-      quote: "As an educator, I appreciate জিঞা's effort to promote Assamese literature. These books are treasures that need to be preserved.",
+      quote: "As an educator, I appreciate জিঞাঁ's effort to promote Assamese literature. These books are treasures that need to be preserved.",
       author: "Dr. Meera Goswami",
       location: "Mumbai"
     }
