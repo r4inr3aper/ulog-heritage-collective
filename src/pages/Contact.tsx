@@ -40,19 +40,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'General Inquiries',
-      email: 'hello@ulog.in',
+      email: 'hello@jinja.in',
       description: 'Questions about our products or mission'
     },
     {
       icon: Mail,
       title: 'Artisan Partnerships',
-      email: 'partnerships@ulog.in',
+      email: 'partnerships@jinja.in',
       description: 'Interested in becoming an artisan partner'
     },
     {
       icon: Mail,
       title: 'Media & Press',
-      email: 'media@ulog.in',
+      email: 'media@jinja.in',
       description: 'Press inquiries and media requests'
     }
   ];
@@ -227,7 +227,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-bold text-assam-earth mb-3">Our Office</h3>
                       <div className="space-y-1 text-gray-700">
-                        <p className="font-semibold">Ulog Heritage Collective</p>
+                        <p className="font-semibold">জিঞা Heritage Collective</p>
                         <p>Cultural Heritage Center</p>
                         <p>Guwahati, Assam 781001</p>
                         <p>India</p>

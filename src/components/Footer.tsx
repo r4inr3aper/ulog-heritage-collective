@@ -24,7 +24,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-assam-green mb-4">Ulog</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/jiya.png" 
+                alt="জিঞা Logo" 
+                className="h-12 w-12 object-contain"
+              />
+              <h3 className="text-2xl font-bold text-assam-green">জিঞা</h3>
+            </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
               A Promise for Affinity. Reviving Assam's rich heritage through authentic products while empowering rural communities.
             </p>
@@ -63,7 +70,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © {new Date().getFullYear()} Ulog. All rights reserved. Made with love for Assam's heritage.
+            © {new Date().getFullYear()} জিঞা. All rights reserved. Made with love for Assam's heritage.
           </p>
         </div>
       </div>

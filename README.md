@@ -1,8 +1,8 @@
-# 🌿 Ulog — Heritage Collective
+# 🌿 জিঞা — Heritage Collective
 
-This is the source code of the official website for **Ulog — A Promise for Affinity**, a cultural initiative that aims to revive and promote Assamese heritage through traditional food, handloom, and literary works. Built using **Next.js (App Router)** and **Tailwind CSS**, the website delivers a fast, responsive, and immersive experience. Deployed on **Vercel**.
+This is the source code of the official website for **জিঞা — A Promise for Affinity**, a cultural initiative that aims to revive and promote Assamese heritage through traditional food, handloom, and literary works. Built using **Next.js (App Router)** and **Tailwind CSS**, the website delivers a fast, responsive, and immersive experience. Deployed on **Vercel**.
 
-🌐 **Live Site:** [ulog-heritage-collective.vercel.app](https://ulog-heritage-collective.vercel.app)
+🌐 **Live Site:** [জিঞা-heritage-collective.vercel.app](https://জিঞা-heritage-collective.vercel.app)
 
 ---
 
@@ -20,7 +20,7 @@ This is the source code of the official website for **Ulog — A Promise for Aff
 ## 📁 Project Structure
 
 ```text
-ulog-heritage-collective/
+জিঞা-heritage-collective/
 ├── app/                     # App Router pages and layouts
 │   ├── layout.tsx           # Root layout
 │   ├── page.tsx             # Homepage
@@ -42,10 +42,10 @@ To run this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/r4inr3aper/ulog-heritage-collective.git
+git clone https://github.com/r4inr3aper/জিঞা-heritage-collective.git
 
 # Navigate to the project directory
-cd ulog-heritage-collective
+cd জিঞা-heritage-collective
 
 # Install dependencies
 npm install

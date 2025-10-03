@@ -153,12 +153,12 @@ const About = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Founded with passion and purpose, Ulog is a heartfelt attempt to reconnect the world with Assam's rich cultural fabric. 
+                  Founded with passion and purpose, জিঞা is a heartfelt attempt to reconnect the world with Assam's rich cultural fabric. 
                   We are a blend of commerce and conscience, partnering with women-led rural collectives to create meaningful livelihoods 
                   and preserve forgotten traditions.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Every product in our collection tells a story of heritage, skill, and hope. Through Ulog, we're not just preserving 
+                  Every product in our collection tells a story of heritage, skill, and hope. Through জিঞা, we're not just preserving 
                   traditions; we're building bridges between rural artisans and global communities.
                 </p>
                 <p className="text-lg text-assam-green font-semibold italic">
@@ -245,7 +245,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Stories of Transformation</h2>
             <p className="text-xl text-gray-600 italic max-w-4xl mx-auto leading-relaxed">
               "Every thread woven, every page turned, and every bite served tells a woman's story of strength and independence. 
-              At Ulog, we don't just sell products – we nurture potential."
+              At জিঞা, we don't just sell products – we nurture potential."
             </p>
           </div>
 
@@ -296,7 +296,7 @@ const About = () => {
                 </blockquote>
                 
                 <blockquote className="text-xl text-gray-700 leading-relaxed italic">
-                  "Ulog is a tribute to her and to thousands like her – women who carry culture in their hands and hearts. 
+                  "জিঞা is a tribute to her and to thousands like her – women who carry culture in their hands and hearts. 
                   Through this platform, I hope to honor their legacy while creating sustainable opportunities for future generations."
                 </blockquote>
               </div>
@@ -307,7 +307,7 @@ const About = () => {
                 </div>
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">Lakshadeep Adhikary</p>
-                  <p className="text-gray-600">Ulog Heritage Collective</p>
+                  <p className="text-gray-600">জিঞা Heritage Collective</p>
                 </div>
               </div>
             </CardContent>

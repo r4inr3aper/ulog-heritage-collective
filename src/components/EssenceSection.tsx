@@ -6,10 +6,10 @@ const EssenceSection = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-assam-earth mb-6">The Essence of Ulog</h2>
+          <h2 className="text-4xl font-bold text-assam-earth mb-6">The Essence of জিঞা</h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ulog brings you the authentic essence of Assam – through rare ethnic foods, timeless handloom artistry, and celebrated Assamese literature. 
+              জিঞা brings you the authentic essence of Assam – through rare ethnic foods, timeless handloom artistry, and celebrated Assamese literature. 
               <span className="font-semibold text-assam-red"> Every purchase supports rural women, revives forgotten traditions, and fuels stories worth preserving.</span>
             </p>
           </div>
