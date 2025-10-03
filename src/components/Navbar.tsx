@@ -35,7 +35,7 @@ const Navbar = () => {
             />
             <div>
               <h1 className="text-xl md:text-xl font-bold text-gradient">জিঞা</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">A Promise for Affinity</p>
+              <p className="text-xs text-gray-600 hidden sm:block">Stay like a Local, Travel like a Friend</p>
             </div>
           </div>
 

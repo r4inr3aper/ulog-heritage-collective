@@ -1,6 +1,6 @@
 # 🌿 জিঞা — Heritage Collective
 
-This is the source code of the official website for **জিঞা — A Promise for Affinity**, a cultural initiative that aims to revive and promote Assamese heritage through traditional food, handloom, and literary works. Built using **Next.js (App Router)** and **Tailwind CSS**, the website delivers a fast, responsive, and immersive experience. Deployed on **Vercel**.
+This is the source code of the official website for **জিঞা — Stay like a Local, Travel like a Friend**, a cultural initiative that aims to revive and promote Assamese heritage through traditional food, handloom, and literary works. Built using **Next.js (App Router)** and **Tailwind CSS**, the website delivers a fast, responsive, and immersive experience. Deployed on **Vercel**.
 
 🌐 **Live Site:** [জিঞা-heritage-collective.vercel.app](https://জিঞা-heritage-collective.vercel.app)
 

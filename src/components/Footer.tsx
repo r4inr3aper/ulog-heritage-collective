@@ -33,7 +33,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold text-assam-green">জিঞা</h3>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              A Promise for Affinity. Reviving Assam's rich heritage through authentic products while empowering rural communities.
+              Stay like a Local, Travel like a Friend. Reviving Assam's rich heritage through authentic products while empowering rural communities.
             </p>
             <div className="flex space-x-4">
               <div className="w-8 h-8 bg-assam-green rounded-full flex items-center justify-center cursor-pointer hover:bg-assam-green-dark transition-colors">
